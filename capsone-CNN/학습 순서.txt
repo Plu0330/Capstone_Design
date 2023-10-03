@@ -1,0 +1,20 @@
+
+# 1. Pretraining Network
+1. train.py 의 맨 하단에서 config_file의 경로 수정 (Pretraining 하는 json 파일의 이름은 config_mnist.json)
+2. config_mnist.json 내부에 경로 수정
+	- 데이터셋 경로
+	- 모델의 Checkpoints 경로
+	- 모델의 Export 경로
+	- 모델의 epoch, num_classes 등 설정
+	- load_checkpoint 설정 (처음시작시 -1. 만약 -1보다 클 경우 checkpoint_path 폴더에서 해당 epoch의 네트워크 자동으로 찾아서 이어서 학습 시작함)
+3. models 폴더 내 mnist_conv_model.py 에서 네트워크 구조 설정
+4. train.py 실행
+
+# 2. Attention Network
+1. train_with_attention.py 의 하단에서 config_file 경로 수정
+2. config_attention.json 내부 경로 수정
+	- 데이터셋 경로(target으로 설정)
+	- 이후 위와 동일
+3. models 폴더 내 mnist_attention_model.py 에서 네트워크 구조 mnist_conv_model.py와 동일하게 설정
+4. mnist_attention_model.py 의 set_src_net 함수 내에서 불러올 pre-trained network 경로 설정
+5. train_with_attention.py 실행
