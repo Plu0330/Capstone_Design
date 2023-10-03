@@ -1,0 +1,63 @@
+{
+  "train_dataset_params": {
+    "dataset_name": "customSign",
+    "dataset_path": "D:\\ms\\capstone\\dataset\\custom\\comb\\train",
+    "loader_params": {
+      "batch_size": 64,
+      "shuffle": true,
+      "num_workers": 4,
+      "pin_memory": true
+    },
+    "input_size": [ 224, 224 ],
+    "input_channel": 3,
+    "class_num":573
+  },
+  "val_dataset_params": {
+    "dataset_name": "customSign",
+    "dataset_path": "D:\\ms\\capstone\\dataset\\custom\\comb\\test",
+    "loader_params": {
+      "batch_size": 64,
+      "shuffle": false,
+      "num_workers": 4,
+      "pin_memory": true
+    },
+    "input_size": [ 224, 224 ],
+    "input_channel": 3,
+    "class_num":573
+  },
+  "feature_dataset_params":{
+    "dataset_name" : "customSign",
+    "dataset_path" : "D:\\ms\\capstone\\dataset\\custom\\comb\\train",
+    "loader_params":{
+      "batch_size": 64,
+      "shuffle": false,
+      "num_workers": 4,
+      "pin_memory": true
+    },
+    "input_size": [ 224, 224 ],
+    "input_channel": 3,
+    "class_num":569
+  },
+  "model_params": {
+    "model_name": "resnet_custom",
+    "is_train": true,
+    "for_activation":true,
+    "max_epochs": 200,
+    "num_classes": 573,
+    "lr": 0.001,
+    "export_path": "C:\\Users\\ms9804\\Desktop\\capstone\\5.capstoneTestVer1\\exports",
+    "checkpoint_path": "C:\\Users\\ms9804\\Desktop\\capstone\\5.capstoneTestVer1\\checkpoints",
+    "db_path" : "C:\\Users\\ms9804\\Desktop\\capstone\\5.capstoneTestVer1\\activationMap",
+    "load_checkpoint": 190,
+    "lr_policy": "step",
+    "lr_decay_iters": 20,
+    "batch_size":64,
+    "feature_epochs":200
+  },
+  "visualization_params": {
+      "name": "classfication"
+  },
+  "printout_freq": 10,
+  "model_update_freq": 1,
+  "save_freq":10
+}
